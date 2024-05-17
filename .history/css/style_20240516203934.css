@@ -2108,29 +2108,28 @@ blockquote {
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
-    /* Ajusta el margen y el padding de #wrapper a 0 en pantallas con un ancho máximo de 480px */
+
     #wrapper {
         margin:0;
         padding:0;
     }
 
-    /* Oculta los elementos .page-border, #scrollUp y sus pseudo-elementos :before */
     .page-border, #scrollUp, #scrollUp:before {
         display:none;
     }
 
-    /* Añade un padding de 15px al elemento .row en pantallas con un ancho máximo de 480px */
     .row {
         padding: 15px !important;
     }
 
-    /* Establece el ancho al 100% y elimina el padding derecho e izquierdo de las columnas en pantallas con un ancho máximo de 480px */
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38, .row {
         width: 100%;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38 {
         padding-right: 0;
         padding-left: 0;
     }
-}
 
 /*-----------------Header Elements-----------------*/
 

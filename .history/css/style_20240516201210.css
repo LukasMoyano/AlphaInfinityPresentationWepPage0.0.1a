@@ -368,7 +368,7 @@ section {
 }
 
 .nav-solid #logo #banner-logo {
-    display: none;
+    display: none ;
 }
 
 .nav-solid #logo #navigation-logo {
@@ -2108,62 +2108,56 @@ blockquote {
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
-    /* Ajusta el margen y el padding de #wrapper a 0 en pantallas con un ancho máximo de 480px */
+
     #wrapper {
         margin:0;
         padding:0;
     }
 
-    /* Oculta los elementos .page-border, #scrollUp y sus pseudo-elementos :before */
     .page-border, #scrollUp, #scrollUp:before {
         display:none;
     }
 
-    /* Añade un padding de 15px al elemento .row en pantallas con un ancho máximo de 480px */
     .row {
         padding: 15px !important;
     }
 
-    /* Establece el ancho al 100% y elimina el padding derecho e izquierdo de las columnas en pantallas con un ancho máximo de 480px */
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38, .row {
         width: 100%;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38 {
         padding-right: 0;
         padding-left: 0;
     }
-}
 
-/*-----------------Header Elements-----------------*/
+    /*-----------------Header Elements-----------------*/
+    #header .row {
+        padding: 0 15px !important;
+    }
 
-/* Añade un padding de 0 a los elementos .row dentro de #header */
-#header .row {
-    padding: 0 15px !important;
-}
+    #header.nav-solid [class*="col-"] {
+        padding: 0;
+    }
 
-/* Añade un padding de 0 a los elementos con clases que empiecen con "col-" dentro de #header.nav-solid */
-#header.nav-solid [class*="col-"] {
-    padding: 0;
-}
+    /*Logo*/
+    #logo h2 {
+        padding: 0;
+    }
 
-/* Establece el padding de h2 dentro de #logo a 0 */
-#logo h2 {
-    padding: 0;
-}
+    /* Social */
+    #header aside {
+        clear: both;
+        padding: 0;
+    }
 
-/* Limpia los estilos de padding en #header aside */
-#header aside {
-    clear: both;
-    padding: 0;
-}
+    #header ul.social-icons {
+        margin-top: 0;
+    }
 
-/* Establece el margen superior de ul.social-icons dentro de #header a 0 */
-#header ul.social-icons {
-    margin-top: 0;
-}
-
-/* Añade un padding-top de 85px al elemento .row dentro de #banner-content */
-#banner-content.row {
-    padding-top: 85px !important;
-}
+    #banner-content.row {
+        padding-top: 85px !important;
+    }
 
     /*-----------------Sections-----------------*/
 
