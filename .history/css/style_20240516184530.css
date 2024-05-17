@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Namari Landing Page v.1.1.0 Style Index - a free landing page by shapingrain.com
 
 1. Default and Reset styles
@@ -13,7 +12,7 @@
 - 2.3 Buttons
 - 2.4 Navigation
 - 2.5 Social Elements
-- 3.6 Images
+- 2.6 Images
 3. Fonts and Headings
 4. Banner
 - 4.1 SignUp Form
@@ -29,454 +28,576 @@
 - 6.5 Clients
 - 6.6 Pricing Table
 7. Footer
-
+*/
 
 /*------------------------------------------------------------------------------------------*/
 /* 1. Defaults & Reset of specific styles across browsers */
 /*------------------------------------------------------------------------------------------*/
 
+/* Aplica el modelo de caja a todos los elementos y pseudo-elementos */
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+/* Restablece márgenes y rellenos para varios elementos */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, blockquote, th, td {
     margin: 0;
     padding: 0;
-    direction: ltr;
+    direction: ltr; /* Establece la dirección del texto de izquierda a derecha */
 }
 
+/* Estilos base para el cuerpo del documento */
 body {
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para navegadores Webkit */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
 }
 
+/* Establece la altura de línea para párrafos */
 p {
     line-height: 25px;
 }
 
+/* Estilos para imágenes dentro de contenedores de fila */
 .row img {
-    height: auto;
-    max-width: 100%;
+    height: auto; /* Altura automática */
+    max-width: 100%; /* Ancho máximo del 100% del contenedor */
 }
 
+/* Estilos para enlaces */
 a {
-    text-decoration: none;
-    line-height: inherit;
-    -webkit-transition: opacity 0.3s ease-out;
-    -moz-transition: opacity 0.3s ease-out;
-    -o-transition: opacity 0.3s ease-out;
-    transition: opacity 0.3s ease-out;
+    text-decoration: none; /* Sin subrayado */
+    line-height: inherit; /* Hereda la altura de línea */
+    -webkit-transition: opacity 0.3s ease-out; /* Transición suave de opacidad */
+    -moz-transition: opacity 0.3s ease-out; /* Transición suave de opacidad */
+    -o-transition: opacity 0.3s ease-out; /* Transición suave de opacidad */
+    transition: opacity 0.3s ease-out; /* Transición suave de opacidad */
 }
 
+/* Estilos para iframes */
 iframe {
-    border: 0 !important;
+    border: 0 !important; /* Sin borde */
 }
 
+/* Estilos para ventanas de parallax */
 .parallax-window {
-    min-height: 400px;
-    background: transparent;
+    min-height: 400px; /* Altura mínima */
+    background: transparent; /* Fondo transparente */
 }
 
+/* Estilos para elementos figure */
 figure {
-    margin: 0;
+    margin: 0; /* Sin margen */
 }
 
-/* Page Border */
-
+/* Estilos para bordes de la página */
 .page-border {
-    position: fixed;
-    z-index: 999999;
-    pointer-events: none;
+    position: fixed; /* Fijo en la ventana */
+    z-index: 999999; /* Alta prioridad en la pila de elementos */
+    pointer-events: none; /* No interactúa con eventos del ratón */
 }
 
 .page-border .bottom-border, .page-border .left-border, .page-border .right-border, .page-border .top-border {
-    background: #f3f3ef;
-    position: fixed;
-    z-index: 9999;
+    background: #f3f3ef; /* Color de fondo */
+    position: fixed; /* Fijo en la ventana */
+    z-index: 9999; /* Alta prioridad en la pila de elementos */
 }
 
 .page-border > .top-border, .page-border > .right-border, .page-border > .bottom-border, .page-border > .left-border {
-    padding: 11px;
-    background: #ccc;
+    padding: 11px; /* Relleno */
+    background: #ccc; /* Color de fondo */
 }
 
 .page-border .bottom-border, .page-border .top-border {
-    width: 100%;
-    padding: 10px;
-    left: 0;
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno */
+    left: 0; /* Alineado a la izquierda */
 }
 
 .page-border .left-border, .page-border .right-border {
-    padding: 10px;
-    height: 100%;
-    top: 0;
+    padding: 10px; /* Relleno */
+    height: 100%; /* Altura completa */
+    top: 0; /* Alineado a la parte superior */
 }
 
 .page-border .top-border {
-    top: 0;
+    top: 0; /* Alineado a la parte superior */
 }
 
 .page-border .right-border {
-    right: 0;
+    right: 0; /* Alineado a la derecha */
 }
 
 .page-border .bottom-border {
-    bottom: 0;
+    bottom: 0; /* Alineado a la parte inferior */
 }
 
 .page-border .left-border {
-    left: 0;
+    left: 0; /* Alineado a la izquierda */
 }
 
+/* Estilos para el contenedor principal */
 #wrapper {
-    margin:0 15px;
-    padding: 15px 0;
-    position: relative;
+    margin:0 15px; /* Margen horizontal */
+    padding: 15px 0; /* Relleno vertical */
+    position: relative; /* Posicionamiento relativo */
 }
 
 
 /* --------- 1.1 Input Elements ---------- */
 
+/* Estilos para entradas y áreas de texto */
 input, textarea {
-    border: 1px solid #e1e1e1;
-    padding: 10px;
-    -webkit-transition: all .3s linear;
-    -moz-transition: all .3s linear;
-    transition: all .3s linear;
-    border-radius: 3px;
+    border: 1px solid #e1e1e1; /* Borde */
+    padding: 10px; /* Relleno */
+    -webkit-transition: all .3s linear; /* Transición suave */
+    -moz-transition: all .3s linear; /* Transición suave */
+    transition: all .3s linear; /* Transición suave */
+    border-radius: 3px; /* Bordes redondeados */
 }
 
+/* Estilos específicos para entradas */
 input {
-    height: 40px;
-    margin: 3px 0;
-    outline: none;
-    line-height: normal;
-    font-size: 14px;
+    height: 40px; /* Altura */
+    margin: 3px 0; /* Margen vertical */
+    outline: none; /* Sin contorno */
+    line-height: normal; /* Altura de línea normal */
+    font-size: 14px; /* Tamaño de fuente */
 }
 
+/* Estilos para botones de envío */
 input[type="submit"] {
-    cursor: pointer;
-    border-style: solid;
-    border-width: 2px;
-    padding-top: 0;
-    padding-bottom: 0;
+    cursor: pointer; /* Puntero de mano */
+    border-style: solid; /* Borde sólido */
+    border-width: 2px; /* Ancho del borde */
+    padding-top: 0; /* Sin relleno superior */
+    padding-bottom: 0; /* Sin relleno inferior */
 }
 
+/* Estilos para elementos de selección */
 select {
-    border: 1px solid #e1e1e1;
-    height: 40px;
-    padding: 5px;
+    border: 1px solid #e1e1e1; /* Borde */
+    height: 40px; /* Altura */
+    padding: 5px; /* Relleno */
 }
 
+/* Estilos para entradas y áreas de texto en foco */
 input:focus, textarea:focus {
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interior */
 }
 
+/* Estilos para todos los elementos en foco */
 *:focus {
-    outline: none;
+    outline: none; /* Sin contorno */
 }
 
 /*------------------------------------------------------------------------------------------*/
 /* 2. Layout Elements */
 /*------------------------------------------------------------------------------------------*/
 
+/* Estilos para secciones */
 section {
-    clear: both;
-    overflow: hidden;
+    clear: both; /* Limpiar ambos lados */
+    overflow: hidden; /* Ocultar desbordamiento */
 }
 
-/* Rows and Columns */
+/* Filas y Columnas */
 
+/* Estilos para filas */
 .row {
-    max-width: 1245px;
-    margin: 0 auto;
-    padding: 75px 0;
-    position: relative;
+    max-width: 1245px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 75px 0; /* Relleno vertical */
+    position: relative; /* Posicionamiento relativo */
 }
 
+/* Estilos para filas sin relleno inferior */
 .no-padding-bottom .row, .no-padding-bottom div, .no-padding-bottom.row {
-    padding-bottom: 0;
+    padding-bottom: 0; /* Sin relleno inferior */
 }
 
+/* Estilos para filas sin relleno superior */
 .no-padding-top.row, .no-padding-top div {
-    padding-top: 0;
+    padding-top: 0; /* Sin relleno superior */
 }
 
+/* Estilos para filas con gran relleno superior */
 .big-padding-top {
-    padding-top: 75px !important;
+    padding-top: 75px !important; /* Gran relleno superior */
 }
 
+/* Estilos para filas con gran relleno inferior */
 .big-padding-bottom {
-    padding-bottom: 85px !important;
+    padding-bottom: 85px !important; /* Gran relleno inferior */
 }
 
 /* Targets all elements */
 
+/* Estilos para todas las clases que contienen 'col-' */
 [class*='col-'] {
-    float: left;
-    padding: 20px;
+    float: left; /* Flotar a la izquierda */
+    padding: 20px; /* Relleno */
 }
 
+/* Estilos específicos para columnas dentro del ID 'clients' */
 #clients .col-2-3 [class*='col-'] {
-    padding: 0;
+    padding: 0; /* Sin relleno */
 }
 
 /* Clearfix */
 
+/* Estilos para clearfix */
 .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+    content: ""; /* Contenido vacío */
+    display: table; /* Mostrar como tabla */
+    clear: both; /* Limpiar ambos lados */
 }
+
 
 /* Main Widths */
 
+/* Estilos para columnas que ocupan el 100% del ancho */
 .col-1 {
     width: 100%;
 }
 
+/* Estilos para columnas que ocupan el 50% del ancho */
 .col-2 {
     width: 50%;
 }
 
+/* Estilos para columnas que ocupan el 33.33% del ancho */
 .col-3 {
     width: 33.33%;
 }
 
+/* Estilos para columnas que ocupan el 25% del ancho */
 .col-4 {
     width: 25%;
 }
 
+/* Estilos para columnas que ocupan el 20% del ancho */
 .col-5 {
     width: 20%;
 }
 
+/* Estilos para columnas que ocupan el 16.6667% del ancho */
 .col-6 {
     width: 16.6666666667%;
 }
 
+/* Estilos para columnas que ocupan el 14.2857% del ancho */
 .col-7 {
     width: 14.2857142857%;
 }
 
+/* Estilos para columnas que ocupan el 12.5% del ancho */
 .col-8 {
     width: 12.5%;
 }
 
+/* Estilos para columnas que ocupan el 11.1111% del ancho */
 .col-9 {
     width: 11.1111111111%;
 }
 
+/* Estilos para columnas que ocupan el 10% del ancho */
 .col-10 {
     width: 10%;
 }
 
+/* Estilos para columnas que ocupan el 9.0909% del ancho */
 .col-11 {
     width: 9.09090909091%;
 }
 
+/* Estilos para columnas que ocupan el 8.33% del ancho */
 .col-12 {
     width: 8.33%;
 }
 
+/* Estilos para columnas que ocupan el 66.66% del ancho */
 .col-2-3 {
     width: 66.66%;
 }
 
+/* Estilos para columnas que ocupan el 75% del ancho */
 .col-3-4 {
     width: 75%;
 }
 
+/* Estilos para columnas que ocupan el 90% del ancho */
 .col-9-10 {
     width: 90%;
 }
 
-/* Golden Ratio */
+/* Golden Ratio (Relación Áurea) */
+
+/* Estilos para columnas que ocupan el 61.8% del ancho */
 .col-61 {
     width: 61.8%;
 }
 
+/* Estilos para columnas que ocupan el 38.2% del ancho */
 .col-38 {
     width: 38.2%;
 }
 
 /* --------- 2.1 Header --------- */
 
+/* Estilos para el encabezado */
 #header {
-    height: 71px !important;
-    overflow: visible;
-    z-index: 9999;
-    width: 100%;
-    position: absolute !important;
+    height: 71px !important; /* Altura fija */
+    overflow: visible; /* Desbordamiento visible */
+    z-index: 9999; /* Alta prioridad en la pila de elementos */
+    width: 100%; /* Ancho completo */
+    position: absolute !important; /* Posicionamiento absoluto */
 }
 
+/* Estilos para filas dentro del encabezado */
 #header .row {
-    padding: 0;
+    padding: 0; /* Sin relleno */
 }
 
+/* Estilos para elementos aside dentro del encabezado */
 #header aside {
-    text-align: right;
+    text-align: right; /* Alineación a la derecha */
 }
 
+/* Estilos para listas dentro del encabezado */
 #header ul {
-    text-align: center;
+    text-align: center; /* Alineación centrada */
 }
 
+/* Estilos para elementos de lista dentro del encabezado */
 #header li {
-    display: inline-block;
-    list-style: none;
-    margin: 0;
+    display: inline-block; /* Mostrar en línea como bloque */
+    list-style: none; /* Sin estilo de lista */
+    margin: 0; /* Sin margen */
 }
 
 /* --------- 2.2 Logo ---------- */
-
+/* Estilos para el logo */
 #logo {
-    float: left;
-    height: 71px;
-    line-height: 66px;
-    margin-right: 15px;
+    float: left; /* Hace que el logo se alinee a la izquierda */
+    height: 71px; /* Altura del logo */
+    line-height: 66px; /* Altura de la línea */
+    margin-right: 15px; /* Margen derecho del logo */
 }
 
+/* Estilos para los títulos dentro del logo */
 #logo h1, #logo h2 {
-    display: inline-block;
+    display: inline-block; /* Hace que los títulos se muestren en línea */
 }
 
+/* Estilos para el título principal (h1) dentro del logo */
 #banner #logo h1 {
-    font-size: 28px;
-    margin-right: 10px;
-    font-weight: 900;
-    padding: 0;
+    font-size: 28px; /* Tamaño de fuente */
+    margin-right: 10px; /* Margen derecho */
+    font-weight: 900; /* Grosor de la fuente (negrita) */
+    padding: 0; /* Espaciado interno */
 }
 
+/* Estilos para el subtítulo (h2) dentro del logo */
 #logo h2 {
-    font-size: 18px;
-    padding: 0;
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 0; /* Espaciado interno */
 }
 
+/* Estilos para la imagen dentro del logo */
 #logo img {
-    max-height: 22px;
-    vertical-align: middle;
-    margin-right: 15px;
+    max-height: 1200px; /* Altura máxima de la imagen */
+    vertical-align: middle; /* Alineación vertical */
+    margin-right: 15px; /* Margen derecho de la imagen */
 }
 
+/* Ocultar el logo en ciertas condiciones */
 #navigation-logo {
-    display: none;
+    display: none; /* Ocultar el logo de navegación */
 }
 
+/* Mostrar u ocultar el logo en la navegación sólida */
 .nav-solid #logo #banner-logo {
-    display: none;
+    display: none; /* Ocultar el logo del banner */
 }
 
 .nav-solid #logo #navigation-logo {
-    display: inline-block;
+    display: inline-block; /* Mostrar el logo de navegación */
 }
+
 
 /* --------- 2.3 Buttons ---------- */
 
+/* Clase para elementos de llamada a la acción */
 .call-to-action {
+    /* Relleno de 35px arriba y abajo, sin relleno a los lados */
     padding: 35px 0 35px 0;
 }
 
-/*Style*/
+/* Estilo de botones */
 
+/* Clase general para los botones */
 .button {
-    font-size: 16px;
-    margin: 35px 0;
-    padding: 11px 16px;
-    -webkit-transition: all .3s linear;
-    -moz-transition: all .3s linear;
-    transition: all .3s linear;
-    display: inline-block;
-    border-width: 3px;
-    border-style: solid;
+    /* Tamaño de fuente de 16px */
+    font-size: 16px; 
+    /* Margen de 35px arriba y abajo, sin margen a los lados */
+    margin: 35px 0; 
+    /* Relleno de 11px arriba y abajo, 16px a los lados */
+    padding: 11px 16px; 
+    /* Transición suave de 0.3s para navegadores WebKit */
+    -webkit-transition: all .3s linear; 
+    /* Transición suave de 0.3s para navegadores Mozilla */
+    -moz-transition: all .3s linear; 
+    /* Transición suave de 0.3s para otros navegadores */
+    transition: all .3s linear; 
+    /* Mostrar como un bloque en línea */
+    display: inline-block; 
+    /* Ancho del borde de 3px */
+    border-width: 3px; 
+    /* Estilo del borde sólido */
+    border-style: solid; 
 }
-
 /* Play Button */
 
+/* Sección del video */
 #video-section {
+    /* Posición relativa para contener elementos posicionados absolutamente dentro */
     position:relative;
 }
 
+/* Contenedor del botón de reproducción de video */
 .play-video {
+    /* Altura del contenedor de 110px */
     height:110px;
+    /* Posición absoluta dentro del contenedor relativo */
     position:absolute;
+    /* Centrado verticalmente */
     top:50%;
+    /* Ajuste de margen superior negativo para centrar el contenedor */
     margin-top:-110px;
+    /* Ancho del contenedor al 100% */
     width:100%;
 }
 
+/* Icono de reproducción */
 .play-icon {
+    /* Mostrar como un bloque en línea */
     display: inline-block;
+    /* Tamaño de fuente de 0px para ocultar texto */
     font-size: 0px;
+    /* Cursor cambia a puntero al pasar sobre el icono */
     cursor: pointer;
+    /* Margen automático para centrar horizontalmente */
     margin: 45px auto;
+    /* Dimensiones del icono */
     width: 110px;
     height: 110px;
+    /* Borde redondeado al 50% para hacerlo circular */
     border-radius: 50%;
+    /* Alineación de texto al centro */
     text-align: center;
+    /* Posición relativa para manejar pseudoelementos */
     position: relative;
+    /* Nivel de apilamiento para controlar la superposición */
     z-index: 1;
 }
 
+/* Pseudoelemento :after para el icono de reproducción */
 .play-icon:after {
+    /* Deshabilitar eventos de puntero en el pseudoelemento */
     pointer-events: none;
+    /* Posición absoluta dentro del contenedor relativo */
     position: absolute;
+    /* Dimensiones completas del contenedor */
     width: 100%;
     height: 100%;
+    /* Borde redondeado al 50% para coincidir con el contenedor */
     border-radius: 50%;
+    /* Contenido vacío */
     content: '';
+    /* Caja de contenido para ajustar dimensiones */
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
+/* Pseudoelemento :before para el icono de reproducción */
 .play-icon:before {
+    /* Familia de fuentes para el icono */
     font-family: 'fontawesome';
+    /* Contenido del icono de reproducción (Unicode) */
     content: '\f144';
+    /* Deshabilitar voz para el icono */
     speak: none;
+    /* Tamaño de fuente del icono */
     font-size: 74px;
+    /* Altura de línea para centrar el icono verticalmente */
     line-height: 110px;
+    /* Estilo de fuente normal */
     font-style: normal;
+    /* Peso de fuente normal */
     font-weight: normal;
+    /* Variante de fuente normal */
     font-variant: normal;
+    /* Sin transformación de texto */
     text-transform: none;
+    /* Mostrar como bloque */
     display: block;
+    /* Suavizado de fuente para navegadores WebKit */
     -webkit-font-smoothing: antialiased;
+    /* Color blanco para el icono */
     color:#fff;
 }
 
+/* Icono de reproducción dentro del contenedor de video */
 .play-video .play-icon {
+    /* Fondo semitransparente blanco */
     background: rgba(255, 255, 255, 0.5);
+    /* Transición suave para la transformación y el fondo en navegadores WebKit */
     -webkit-transition: -webkit-transform ease-out 0.3s, background 0.4s;
+    /* Transición suave para la transformación y el fondo en navegadores Mozilla */
     -moz-transition: -moz-transform ease-out 0.3s, background 0.4s;
+    /* Transición suave para la transformación y el fondo en otros navegadores */
     transition: transform ease-out 0.3s, background 0.4s;
 }
 
+/* Pseudoelemento :after dentro del icono de reproducción en el contenedor de video */
 .play-video .play-icon:after {
+    /* Posición superior del contenedor */
     top: 0;
+    /* Posición izquierda del contenedor */
     left: 0;
+    /* Sin relleno */
     padding: 0;
+    /* Nivel de apilamiento para controlar la superposición */
     z-index: -1;
+    /* Sombra alrededor del contenedor */
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    /* Opacidad inicial del contenedor */
     opacity: 0;
+    /* Transformación inicial para reducir el tamaño */
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     -ms-transform: scale(0.9);
     transform: scale(0.9);
 }
 
+/* Efecto de hover sobre el icono de reproducción */
 .play-video .play-icon:hover {
+    /* Fondo semitransparente más claro */
     background: rgba(255, 255, 255, 0.05);
+    /* Transformación de escala al hacer hover */
     -webkit-transform: scale(0.93);
     -moz-transform: scale(0.93);
     -ms-transform: scale(0.93);
     transform: scale(0.93);
+    /* Color del texto blanco */
     color: #fff;
 }
+
 
 
 /* --------- 2.4 Navigation ---------- */
@@ -727,7 +848,7 @@ h1 {
 }
 
 h2 {
-    padding: 14px 0;
+    padding: 0px 0;
 }
 
 h3 {
@@ -793,7 +914,7 @@ h6 {
 }
 
 #banner h1 {
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 #banner .section-heading:before {
@@ -1544,7 +1665,7 @@ blockquote {
     margin-bottom: 0;
 }
 
-#scrollUp:before 
+#scrollUp:before {
     background: #ccc;
     font-family: "fontawesome";
     font-size: 2.4em;
@@ -2084,80 +2205,97 @@ blockquote {
 /* =Media Queries for Nav
 ===============================*/
 @media all and (max-width: 1024px) {
+    /* Cuando la pantalla es menor o igual a 1024px de ancho */
+    
     #nav-trigger {
-        display: block;
+        display: block; /* Mostrar el disparador de navegación */
     }
 
     nav#nav-main {
-        display: none;
+        display: none; /* Ocultar la navegación principal */
     }
 
     nav#nav-mobile {
-        display: block;
+        display: block; /* Mostrar la navegación móvil */
     }
 
     nav#nav-mobile li {
-        display: block;
+        display: block; /* Asegurar que los elementos de lista en navegación móvil se muestran como bloques */
     }
 
     #header aside {
-        display: none;
+        display: none; /* Ocultar el elemento aside en el encabezado */
     }
 }
 
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
+    /* Cuando la pantalla es menor o igual a 480px de ancho (dispositivos móviles en modo horizontal y menor) */
 
     #wrapper {
-        margin:0;
-        padding:0;
+        margin: 0; /* Quitar margen */
+        padding: 0; /* Quitar relleno */
     }
 
     .page-border, #scrollUp, #scrollUp:before {
-        display:none;
+        display: none; /* Ocultar bordes de la página y botón de desplazamiento hacia arriba */
     }
 
     .row {
-        padding: 15px !important;
+        padding: 15px !important; /* Relleno de 15px en todos los lados, importante */
     }
 
+    /* Asegurar que todas las columnas y filas ocupen el 100% del ancho en pantallas pequeñas */
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38, .row {
-        width: 100%;
+        width: 100%; /* Ancho completo */
     }
 
+    /* Quitar el relleno izquierdo y derecho para todas las columnas en pantallas pequeñas */
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-2-3, .col-3-4, .col-9-10, .col-61, .col-38 {
-        padding-right: 0;
-        padding-left: 0;
+        padding-right: 0; /* Sin relleno a la derecha */
+        padding-left: 0;  /* Sin relleno a la izquierda */
     }
+}
 
-    /*-----------------Header Elements-----------------*/
-    #header .row {
-        padding: 0 15px !important;
-    }
 
-    #header.nav-solid [class*="col-"] {
-        padding: 0;
-    }
+/*-----------------Header Elements-----------------*/
 
-    /*Logo*/
-    #logo h2 {
-        padding: 0;
-    }
+/* Estilos para la fila dentro del encabezado */
+#header .row {
+    padding: 0 15px !important; /* Relleno de 15px a los lados, importante */
+}
 
-    /* Social */
-    #header aside {
-        clear: both;
-        padding: 0;
-    }
+/* Estilos para columnas dentro del encabezado con clase "nav-solid" */
+#header.nav-solid [class*="col-"] {
+    padding: 0; /* Sin relleno */
+}
 
-    #header ul.social-icons {
-        margin-top: 0;
-    }
+/* Logo */
 
-    #banner-content.row {
-        padding-top: 85px !important;
-    }
+/* Estilos para el encabezado h2 dentro del logo */
+#logo h2 {
+    padding: 0; /* Sin relleno */
+}
+
+/* Social */
+
+/* Estilos para elementos aside dentro del encabezado */
+#header aside {
+    clear: both; /* Limpiar ambos lados para evitar flotar */
+    padding: 0; /* Sin relleno */
+}
+
+/* Estilos para la lista de iconos sociales dentro del encabezado */
+#header ul.social-icons {
+    margin-top: 0; /* Sin margen superior */
+}
+
+/* Estilos para el contenido del banner con clase "row" */
+#banner-content.row {
+    padding-top: 85px !important; /* Relleno superior de 85px, importante */
+}
+
 
     /*-----------------Sections-----------------*/
 
